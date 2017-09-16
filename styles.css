@@ -1,0 +1,294 @@
+#centerDiv {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+#leftDiv {
+    position: absolute;
+    left: 0%;
+    top: 30%;
+    width: 50%;
+    text-align: left;
+}
+#rightDiv {
+    position: absolute;
+    right: 0%;
+    top: 30%;
+    width: 50%;
+    text-align: right;
+}
+body {
+    height: 100%;
+    background: linear-gradient(90deg, #A6C1F9 50%, #F69193 50%);
+}
+
+#highscore {
+    position: absolute;
+    font-size: 30px;
+    color: white;
+    top: 650px;
+    font-family: 'Lobster', cursive;
+}
+
+#instructions {
+    position: absolute;
+    font-size: 25px;
+    color: white;
+    top: 270px;
+    font-family: 'Lobster', cursive;
+    width: 200px;
+}
+#instructionsBlue {
+    left: 50px;
+    width: 70px;
+    text-align: center;
+    position: absolute;
+    font-size: 25px;
+    color: blue;
+    font-family: 'Anton', sans-serif;
+}
+#instructionsRed {
+    right: 50px;
+    width: 70px;
+    text-align: center;
+    position: absolute;
+    font-size: 25px;
+    color: red;
+    font-family: 'Anton', sans-serif;
+}
+
+#timer {
+    top: 120px;
+    position: absolute;
+    font-size: 150px;
+    font-family: 'Lobster', cursive;
+    color: white;
+    margin: 0;
+}
+#startButton {
+    font-size: 34px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;    
+	-moz-box-shadow: 0px 3px 8px #aaa, inset 0px 6px 4px 0px #caefab;
+	-webkit-box-shadow: 0px 3px 8px #aaa, inset 0px 6px 4px 0px #caefab;
+	box-shadow: 0px 3px 8px #aaa, inset 0px 6px 4px 0px #caefab;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #76D429), color-stop(1, #5cb811));
+	background:-moz-linear-gradient(top, #77d42a 5%, #5cb811 100%);
+	background:-webkit-linear-gradient(top, #77d42a 5%, #5cb811 100%);
+	background:-o-linear-gradient(top, #77d42a 5%, #5cb811 100%);
+	background:-ms-linear-gradient(top, #77d42a 5%, #5cb811 100%);
+	background:linear-gradient(to bottom, #77d42a 5%, #5cb811 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#77d42a', endColorstr='#5cb811',GradientType=0);
+	background-color:#77d42a;
+	border:1px solid #268a16;
+	cursor:pointer;
+	color:#306108;
+    font-family: 'Lobster', cursive;
+	font-weight:bold;
+    text-shadow:0px 1px 0px #aade7c;
+    position: absolute;
+
+    transform: translate(-50%, 9px);
+
+}
+#startButtonShadow {
+    content: "";
+    width: 120px;
+    height: 120px;
+    background: #fff;
+    border-top: 2px solid #ddd;
+    border-radius: 50%;
+    box-shadow: inset 0px 8px 48px #ddd;
+}
+#startButton:active {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #5cb811), color-stop(1, #77d42a));
+	background:-moz-linear-gradient(top, #5cb811 5%, #77d42a 100%);
+	background:-webkit-linear-gradient(top, #5cb811 5%, #77d42a 100%);
+	background:-o-linear-gradient(top, #5cb811 5%, #77d42a 100%);
+	background:-ms-linear-gradient(top, #5cb811 5%, #77d42a 100%);
+	background:linear-gradient(to bottom, #5cb811 5%, #77d42a 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#5cb811', endColorstr='#77d42a',GradientType=0);
+    background-color:#5cb811;
+    -moz-box-shadow:inset 0px 0px 0px 0px #caefab;
+	-webkit-box-shadow:inset 0px 0px 0px 0px #caefab;
+	box-shadow:inset 0px 0px 0px 0px #caefab;
+}
+#startButton:focus {outline:0 !important;}
+
+
+#blueScore {
+    font-size: 100px;
+    font-family: 'Lobster', cursive;
+    margin-left: 50px;
+    color: white;
+}
+#redScore {
+    font-size: 100px;
+    font-family: 'Lobster', cursive;
+    margin-right: 50px;
+    color: white;
+}
+
+#blueBar {
+    position: absolute;
+    background: #f1f1f1;
+    width: 10%;
+    margin-left: 70%;
+    bottom: 0;
+}
+#redBar {
+    right: 0;
+    position: absolute;
+    background: #f1f1f1;
+    width: 10%;
+    margin-right: 70%;
+    bottom: 0;
+}
+
+#redSwordGuy {
+    position: absolute;
+    width: 200px;
+    margin-right: 70%;
+    bottom: 0;
+    right: 0;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+#blueSwordGuy {
+    position: absolute;
+    width: 200px;
+    margin-left: 70%;
+    bottom: 0;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+#victoryScreen {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    -webkit-animation-name: fadeIn;
+    -webkit-animation-duration: 0.7s;
+    animation-name: fadeIn;
+    animation-duration: 0.7s
+}
+
+#victoryScreenBlue {
+    position: relative;
+    display: none;
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #1600FF;
+    width: 60%;
+    text-align: center;
+    font-family: 'press start 2p', cursive;
+    font-size: 50px;
+
+    -webkit-animation-name: slideIn;
+    -webkit-animation-duration: 1s;
+    animation-name: slideIn;
+    animation-duration: 1s
+}
+
+#victoryScreenRed {
+    position: relative;
+    display: none;
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #FF0000;
+    width: 60%;
+    text-align: center;
+    font-family: 'press start 2p', cursive;
+    font-size: 50px;
+
+    -webkit-animation-name: slideIn;
+    -webkit-animation-duration: 1s;
+    animation-name: slideIn;
+    animation-duration: 1s
+}
+
+#victoryScreenTie {
+    position: relative;
+    display: none;
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid purple;
+    width: 60%;
+    text-align: center;
+    font-family: 'press start 2p', cursive;
+    font-size: 50px;
+
+    -webkit-animation-name: slideIn;
+    -webkit-animation-duration: 1s;
+    animation-name: slideIn;
+    animation-duration: 1s
+}
+
+#victoryTextBlue {
+    animation: shake 1s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
+#victoryTextRed {
+    animation: shake 1s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+#victoryTextTie {
+    animation: shake 1s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+  
+@keyframes shake {
+    10%, 90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+    20%, 80% {
+      transform: translate3d(2px, 0, 0);
+    }
+    30%, 50%, 70% {
+      transform: translate3d(-4px, 0, 0);
+    }
+    40%, 60% {
+      transform: translate3d(4px, 0, 0);
+    }
+  }
+
+@-webkit-keyframes slideIn {
+    from {top: -100; opacity: 0} 
+    to {top: 0; opacity: 1}
+}
+@keyframes slideIn {
+    from {top: -100px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+@-webkit-keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+}
+@keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+}
