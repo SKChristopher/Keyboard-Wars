@@ -127,10 +127,14 @@ const fight = function war(){
     let timer2 = setInterval(updateTimer, 1000);
     fighting = true;
     document.addEventListener('keydown', scoring);
+    document.getElementById('leftDiv').addEventListener('touchstart', scoringBlue);
+    document.getElementById('rightDiv').addEventListener('touchstart', scoringRed);
     setTimeout(function(){
         fighting = false;
         startButton.onclick = function() {startButtonClick()};
         document.removeEventListener('keydown', scoring);
+        document.getElementById('leftDiv').removeEventListener('touchstart', scoringBlue);
+        document.getElementById('rightDiv').removeEventListener('touchstart', scoringRed);
         clearInterval(timer2);
         startButton.value = 'Start';
         victory();
@@ -148,14 +152,10 @@ function scoring(addingScore) {
     }
 }
 
-document.getElementById('leftDiv').addEventListener('touchstart', scoringBlue);
-
 function scoringBlue() {
     blueCounter++;
     document.getElementById('blueBar').style.height = blueCounter * 3 + 'px';
 }
-
-document.getElementById('rightDiv').addEventListener('touchstart', scoringRed);
 
 function scoringRed() {
     redCounter++;
