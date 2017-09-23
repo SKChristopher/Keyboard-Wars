@@ -148,6 +148,20 @@ function scoring(addingScore) {
     }
 }
 
+document.getElementById('leftDiv').addEventListener('touchstart', scoringBlue);
+
+function scoringBlue() {
+    blueCounter++;
+    document.getElementById('blueBar').style.height = blueCounter * 3 + 'px';
+}
+
+document.getElementById('rightDiv').addEventListener('touchstart', scoringRed);
+
+function scoringRed() {
+    redCounter++;
+    document.getElementById('redBar').style.height = redCounter * 3 + 'px';
+}
+
 function updateTimer() {
     if (timerNum > 0) {
     timerNum--;
